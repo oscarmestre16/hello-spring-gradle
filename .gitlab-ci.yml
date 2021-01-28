@@ -1,0 +1,13 @@
+default:
+    image: node:latest
+
+build-job:
+    stage: build
+    script:
+        - npm install
+        - npm run build
+        - echo "Install and build time."
+deploy-job:
+    stage: deploy
+    script:
+        - echo "Hello, it is deploy time."
