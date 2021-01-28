@@ -9,4 +9,4 @@ build-job:
     artifacts:
         when: always
         paths:
-            -build/lib/*.jar
+            - build/libs/*.jar
