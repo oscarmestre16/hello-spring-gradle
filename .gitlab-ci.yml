@@ -6,7 +6,7 @@ build-job:
     script:
         - ./gradlew assemble
         - echo "Assemble .."
-test-job:
-    stage: test
-    script:
-        - echo "test"
+    artifacts:
+        when: always
+        paths:
+            -build/lib/*.jar
