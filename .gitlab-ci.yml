@@ -1,17 +1,12 @@
 default:
-    image: OpenJDK-15.0.2
+    image: openjdk:11-jdk
 
-test-job:
-    stage: test
-    script:
-        - echo "JAVA_HOME=${JAVA_HOME}"
 build-job:
     stage: build
     script:
         - ./gradlew assemble
         - echo "Assemble .."
-deploy-job:
-    stage: deploy
+test-job:
+    stage: test
     script:
-        - echo "Deploy"
-        - ./gradlew test
+        - echo "test"
