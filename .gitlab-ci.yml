@@ -1,8 +1,8 @@
 default:
     image: OpenJDK-15.0.2
 
-setup-job:
-    stage: setup
+test-job:
+    stage: test
     script:
         - echo "JAVA_HOME=${JAVA_HOME}"
 build-job:
