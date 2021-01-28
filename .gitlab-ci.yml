@@ -1,13 +1,17 @@
 default:
-    image: node:latest
+    image: OpenJDK-15.0.2
 
+setup-job:
+    stage: setup
+    script:
+        - echo "JAVA_HOME=${JAVA_HOME}"
 build-job:
     stage: build
     script:
-        - npm install
-        - npm run build
-        - echo "Install and build time."
+        - ./gradlew assemble
+        - echo "Assemble .."
 deploy-job:
     stage: deploy
     script:
-        - echo "Hello, it is deploy time."
+        - echo "Deploy"
+        - ./gradlew test
